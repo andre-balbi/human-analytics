@@ -11,7 +11,7 @@ da gestão de recursos humanos e identificar possíveis candidatos a deixar a em
 
 ### Overview
 
-![overview2.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5f3150ee-23dd-4704-bd07-342549d8f5de/overview2.png)
+[overview2.png](../img/overview2.png)
 
 ### Objetivos
 
