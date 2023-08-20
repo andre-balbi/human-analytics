@@ -148,5 +148,42 @@ Com base nas análises da fase anterior, foi possível, por meio da utilização
 
 Códigos originais: [`build_features.py`](src/features/build_features.py)
 
-Passo a passo explicado: [`04_build_features.ipynb`](notebooks/04_build_features.ipynb)
+Passo a passo explicado: [`03_build_features.ipynb`](notebooks/03_build_features.ipynb)
+
+## **Etapa 05 - Treinando o Modelo**
+
+Conduzir experimentos para selecionar features, escolher um modelo e ajustar hiperparâmetros em busca da combinação que maximiza a precisão na classificação dos funcionários.
+
+1. Feature selection usando Decision Tree
+2. Criando um modelo para usar como baseline
+3. Criando métricas para avaliacao dos modelos
+4. Curva ROC
+5. Comparando os modelos:
+6. Comparando modelos (Logistic Regression, Decision Tree, Random Forest)
+7. Utilizando Automated Machine Learning (PyCaret)
+
+Códigos originais: [`train_model.py`](src/models/train_model.py)
+
+Passo a passo explicado: [`04_train_model.ipynb`](notebooks/04_train_model.ipynb)
+
+
+## **Etapa 06 - Data APP**
+
+Este aplicativo utilizando Streamlit apresenta uma solução de Aprendizado de Máquina para prever a rotatividade de Recursos Humanos.
+
+Permitindo que os usuários definam atributos dos funcionários para a previsão, ele exibe a posição do funcionário em grupos potenciais de rotatividade com um indicador magenta. O aplicativo realiza classificação usando o modelo treinado e exibe os resultados junto com uma visualização dos grupos de funcionários com base em pontuações de satisfação e avaliação.
+
+### Utilização
+
+Para executar o aplicativo, siga estes passos:
+
+1. Abra o prompt de comando ou terminal.
+2. Navegue até o diretório onde o arquivo app.py está localizado usando o comando cd. Por exemplo:`(base) D:\\Projetos\\rotatividade-funcionarios\\app>`
+3. Execute o aplicativo Streamlit usando o seguinte comando:
+```
+streamlit run app.py
+```
+4. O aplicativo será lançado em seu navegador da web padrão. Agora você pode interagir com o aplicativo para prever a rotatividade de funcionários com base em diferentes atributos.
+
+![streamlit](img/streamlit.png)
 
