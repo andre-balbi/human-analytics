@@ -98,3 +98,55 @@ docker run -d -p 8080:8080 -v "$PWD/airflow/dags:/opt/airflow/dags/" --entrypoin
 
 1. Importar arquivo ***employees_db.sql*** contendo o script para criação do banco de dados (localizado na pasta ***database*** do projeto)
 ![sql_Data](img/import_sql_data.png)
+
+## **Etapa 02 - Preparação dos Dados**
+
+Exploraremos um pipeline que extrai, transforma e cria recursos a partir de dados de funcionários de uma empresa fictícia. Utilizaremos bibliotecas Python como Pandas e SQLAlchemy para lidar com dados de várias fontes.
+
+1. Extração de Dados do Banco de Dados e do Data Lake
+2. Criação de Recursos (features):
+    1. Dados de Avaliação de Desempenho
+    2. Número de Projetos por Funcionário
+    3. Média de Horas de Trabalho nos Últimos 3 Meses
+    4. Tempo na Empresa
+    5. Incidência de Acidentes de Trabalho
+    6. Departamento, Salário e Status de Emprego (Ativo ou Inativo)
+   
+Códigos originais: [`make_dataset.py`](src/data/make_dataset.py)
+
+Passo a passo explicado: [`01_make_dataset.ipynb`](notebooks/01_make_dataset.ipynb)
+
+## **Etapa 03 - Exploratory Data Analysis (EDA)**
+
+Elaborar scripts para processar, visualizar e modelar os dados, permitindo a geração de insights que ampliem a compreensão dos desafios enfrentados. Além disso, interpretar os indicadores de desempenho em relação ao problema a ser solucionado. 
+
+1. Lidando com valores faltantes
+2. Criando estatísticas para melhor entendimento do problema
+
+Durante a fase de Análise Exploratória de Dados, identificamos diversos insights relevantes, conforme listados abaixo:
+
+3. A empresa registra uma taxa de rotatividade de 24%.
+4. Pode-se inferir que funcionários com maior índice de saída estão menos satisfeitos.
+5. Há um número substancial de colaboradores insatisfeitos.
+6. A maioria dos funcionários que deixaram a empresa tinha salários baixos ou médios.
+7. Os departamentos de Vendas, Técnico e Suporte são os três principais com maiores índices de rotatividade.
+8. Todos os colaboradores com envolvimento limitado em projetos deixaram a empresa.
+9. Aqueles com desempenho inferior apresentam maior probabilidade de saída.
+
+Códigos originais: [`visualize.py`](src/visualization/visualize.py)
+
+Passo a passo explicado: [`02_visualize.ipynb`](notebooks/02_visualize.ipynb)
+
+
+## **Etapa 04 - Feature Engineering**
+
+Com base nas análises da fase anterior, foi possível, por meio da utilização do agrupamento K-Means, criar 3 grupos distintos para categorizar colaboradores que deixaram a empresa de acordo com comportamentos semelhantes. Estes grupos são:
+
+1. Hardworking and satisfied employees.
+2.  Poor-performing and dissatisfied employees.
+3. Hardworking but unhappy employees.
+
+Códigos originais: [`build_features.py`](src/features/build_features.py)
+
+Passo a passo explicado: [`04_build_features.ipynb`](notebooks/04_build_features.ipynb)
+
