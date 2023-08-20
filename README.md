@@ -26,13 +26,11 @@ Criar, instalar e ativar o ambiente  Anaconda:
 conda env create -f environment.yml.
 ```
 
----
-
-### **Etapa 01 - Criação dos Containers**
+## **Etapa 01 - Criação dos Containers**
 
 Criar containers simulando um ambiente real de produção.
 
-#### MySQL Server
+### MySQL Server
 
 1. Criar o container do MySQL habilitando a porta 3307 executando o comando via terminal Powershell:
     
@@ -43,7 +41,7 @@ docker run --name mysqlbd1 -e MYSQL_ROOT_PASSWORD=0000 -p "3307:3306" -d mysql
 ![sql](img/sql.png)
 `Host: 127.0.0.1| Username: root | Port: 3307 | Password: 0000`
 
-## Data Lake com Minio Server
+### Data Lake com Minio Server
 
 1. Dentro do diretório projeto crie o diretório ***datalake***.
 2. Execute o comando via terminal Powershell:
@@ -55,7 +53,7 @@ docker run --name minio -d -p 9000:9000 -p 9001:9001 -v "$PWD/datalake:/data" mi
 [http://localhost:9000](http://localhost:9000/login)
 `| username: minioadmin | password: minioadmin`
 
-## Airflow
+### Airflow
 
 1. Dentro do diretório projeto criar o diretório ***airflow***.
 2. Navegar até o diretório airflow e criar o diretório ***dags***.
@@ -85,7 +83,7 @@ docker run -d -p 8080:8080 -v "$PWD/airflow/dags:/opt/airflow/dags/" --entrypoin
 
 `data_lake_server = 172.17.0.3:9000 | data_lake_login = minioadmin| data_lake_password = minioadmin | database_server = 172.17.0.2 (executar: docker container inspect mysqlbd1 e localizar o atributo: IPAddress) | database_login = root | database_password = 0000 | database_name = employees`
 
-#### Criação dos Dados
+### Criação dos Dados
 
 1. Criar os buckets ***landing, processing*** e ***curated.***
 
@@ -94,8 +92,9 @@ docker run -d -p 8080:8080 -v "$PWD/airflow/dags:/opt/airflow/dags/" --entrypoin
 1. No bucket ***landing***, criar a pasta ***performance-evaluation***, nela será inserido o arquivo json referente a avaliação individual do desempenho dos funcionários realizados pela empresa. 
 2. Ainda no bucket ***landing***, criar outra pasta chamada ***working-hours,*** nela serão inseridos arquivos .xlsx referente as horas trabalhadas pelos funcionários.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fead4ab2-03a8-45e7-a33e-5042dbbd4b6b/Untitled.png)
+![datalake-2](img/datalake_2.png)
 
-## Subindo e carregando o banco de dados
+### Subindo e carregando o banco de dados
 
 1. Importar arquivo ***employees_db.sql*** contendo o script para criação do banco de dados (localizado na pasta ***database*** do projeto)
+![sql_Data](img/import_sql_data.png)
