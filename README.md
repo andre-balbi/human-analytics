@@ -187,3 +187,11 @@ streamlit run app.py
 
 ![streamlit](img/streamlit.png)
 
+## Conclusão
+
+Ao longo do desenvolvimento deste projeto, foi possível aplicar e consolidar princípios essenciais da Ciência e Engenharia de Dados, gerando uma solução concreta para um desafio recorrente em todas as empresas: a retenção de talentos. Utilizamos a análise de dados dos Recursos Humanos para abordar essa questão de maneira eficaz e fundamentada.
+
+Um exemplo concreto desse projeto é a identificação de padrões nos dados de satisfação e avaliações de desempenho dos colaboradores. Ao analisar esses conjuntos de informações, desenvolvemos modelos preditivos capazes de estimar a probabilidade de um funcionário deixar a empresa nos meses seguintes. Por exemplo, ao identificar que colaboradores com baixa satisfação e avaliações abaixo da média têm maior probabilidade de sair, a empresa pode implementar estratégias direcionadas, como programas de retenção e melhorias no ambiente de trabalho, para mitigar esse cenário.
+
+Além disso, almejamos uma etapa adicional de melhoria contínua: a automação. Isso significa que, para otimizar ainda mais nossos processos, pretendemos automatizar passos cruciais, como a construção e ajuste de modelos de Machine Learning, bem como a implantação dos mesmos. Com esse nível de automação, a empresa poderá tomar decisões embasadas em tempo real, respondendo de maneira ágil e precisa às tendências e variações nos dados dos Recursos Humanos.
+
